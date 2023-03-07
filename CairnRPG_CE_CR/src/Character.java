@@ -1,3 +1,4 @@
+import java.util.Random;
 public class Character {
 
     String name;
@@ -5,11 +6,19 @@ public class Character {
     float attackPower;
     boolean isAlive;
 
-    static boolean runAway(){
+    public boolean runAway(){
+        Random rand = new Random();
+        int rand_int = rand.nextInt(100);
 
+        if (rand_int < 60){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
-    static String info(){
-
+    public String info() {
+        return "Name: " + name + "Health: " + health + "Attack Power: " + attackPower + "Is Alive: "+ isAlive;
     }
 
     public Character(String name, float health, float attackPower, boolean isAlive){
