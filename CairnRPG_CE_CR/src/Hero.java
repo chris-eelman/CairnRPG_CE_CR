@@ -1,15 +1,14 @@
-
+// TODO: make the item class
+//  add the item to the players inventory
+//  finish the methods
 public class Hero extends Character {
-    private int level;
-    private int experience;
-    private float money;
+    private int level = 1;
+    private int experience = 0;
+    private float money = 0.0f;
     private Item[] inventory;
 
     public Hero(float health, float attackPower, boolean isAlive) {
         super("Starkiller", health, attackPower, isAlive);
-        this.level = 1;
-        this.experience = 0;
-        this.money = 0.0f;
         this.inventory = new Item[5];
     }
 
@@ -51,7 +50,7 @@ public class Hero extends Character {
     // methods specific to the hero class
     public boolean fight(Enemy enemy) {
         // Decide whether to use a basic attack or a special attack
-        int attackPower;
+        float attackPower;
         String attackType;
         double randomValue = Math.random();
         if (randomValue < 0.2) {
