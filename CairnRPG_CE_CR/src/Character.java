@@ -11,9 +11,11 @@ public class Character {
         int rand_int = rand.nextInt(100);
 
         if (rand_int < 60){
+            System.out.println("Failed to run away!");
             return false;
         }
         else{
+            System.out.println("Successfully ran away");
             return true;
         }
     }
