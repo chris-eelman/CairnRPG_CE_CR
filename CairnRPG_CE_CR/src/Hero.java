@@ -97,7 +97,7 @@ public class Hero extends Character {
         for (int i = 0; i < inventory.length; i++) {
             if (inventory[i] != null) {
                 this.health += inventory[i].getHealingPower();
-                System.out.println("A " + inventory[i].getName() +" healed " + name + "by " + inventory[i].getHealingPower() +" HP");
+                System.out.println("A " + inventory[i].getName() +" healed " + name + " by " + inventory[i].getHealingPower() +" HP");
                 amountHealed += inventory[i].getHealingPower();
                 break;
             }
@@ -139,7 +139,7 @@ public class Hero extends Character {
         String itms = "";
         for (int i = 0; i < inventory.length; i++) {
             if (inventory[i] != null) {
-                itms += inventory[i].getName() + " (" + (inventory[i].getName()).toString() + ")" + ", ";
+                itms += inventory[i].getName() + " (" + (inventory[i].getHealingPower()) + ")" + ", ";
             }
         }
         return itms;

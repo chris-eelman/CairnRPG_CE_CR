@@ -4,10 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CharacterTest {
 
-//    @Test
-//    void runAway() {
-//        var
-//    }
+    @Test
+    void runAway() {
+        var
+    }
 
     @Test
     void info() {
