@@ -8,7 +8,7 @@ public class Hero extends Character {
 
     public Hero(float health, float attackPower, boolean isAlive) {
         super("Starkiller", health, attackPower, isAlive);
-        Item firstPotion = new Item("Potion", 20)
+        Item firstPotion = new Item("Potion", 20);
         this.inventory = new Item[5];
         this.inventory[0] = firstPotion;
     }
@@ -108,6 +108,18 @@ public class Hero extends Character {
 
     public boolean levelUp() {
         // code to check if the hero can level up based on experience and perform the level up if possible
+        if (this.experience > 100) {
+            this.level++;
+            System.out.println(this.getName() + " Leveled Up to Level " + this.getLevel());
+            this.health *= 1.1;
+            System.out.println(this.getName() + "'s health increased to " + this.getHealth());
+            this.attackPower += 1.1;
+            System.out.println(this.getName() + "'s attack power increased to " + this.getAttackPower());
+            this.experience = 0;
+
+            return true;
+        }
+        return false;
     }
 
     public boolean addToInventory(Item item) {
