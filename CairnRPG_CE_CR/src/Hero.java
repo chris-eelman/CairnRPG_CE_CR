@@ -1,5 +1,4 @@
-// TODO: make the item class
-//  add the item to the players inventory
+// TODO:
 //  finish the methods
 public class Hero extends Character {
     private int level = 1;
@@ -9,7 +8,9 @@ public class Hero extends Character {
 
     public Hero(float health, float attackPower, boolean isAlive) {
         super("Starkiller", health, attackPower, isAlive);
+        Item firstPotion = new Item("Potion", 20)
         this.inventory = new Item[5];
+        this.inventory[0] = firstPotion;
     }
 
     // getter and setters
@@ -92,6 +93,17 @@ public class Hero extends Character {
 
     public int useItem(int itemIndex) {
         // code to use an item from the inventory
+        int amountHealed = 0;
+        for (int i = 0; i < inventory.length; i++) {
+            if (inventory[i] != null) {
+                this.health += inventory[i].getHealingPower();
+                System.out.println("A " + inventory[i].getName() +" healed Johnny by "+ inventory[i].getHealingPower() +" HP");
+                amountHealed += inventory[i].getHealingPower();
+                break;
+            }
+        }
+        return amountHealed;
+
     }
 
     public boolean levelUp() {
