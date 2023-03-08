@@ -53,5 +53,6 @@ public class Boss extends Enemy {
 
     public String info() {
         //code to display the Boss's statistics
+        return "Name: " + name + "Health: " + health + "Attack Power: " + attackPower + "Is Alive " + isAlive;
     }
 }

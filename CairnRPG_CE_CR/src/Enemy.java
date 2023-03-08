@@ -57,6 +57,7 @@ public class Enemy extends Character {
 
     public String info() {
     //code to display the Enemy's statistics
+        return "Name: " + name + "Health: " + health + "Attack Power: " + attackPower + "Is Alive " + isAlive;
     }
 }
 
