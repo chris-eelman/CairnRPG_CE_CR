@@ -9,10 +9,10 @@ public class World {
     }
 
     public World() {
-        this.gameName = "Something";
-        this.publisher = "11 as 1";
+        this.gameName = "Star Wars Battlefront 9";
+        this.publisher = " CCG ";
     }
-
+// Getters and Setters
     public String getGameName() {
         return gameName;
     }
