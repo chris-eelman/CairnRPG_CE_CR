@@ -3,35 +3,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HeroTest {
 
-//    Enemy EnemyTest = new Enemy {}
+    //    Enemy EnemyTest = new Enemy {}
     @Test
-    public void fightingTest1(){
+    public void fight() {
         var something = new Hero();
         assertEquals(5, something.fight())
 
-    }
-    void getLevel() {
-    }
-
-    void setLevel() {
-    }
-
-    void getExperience() {
-    }
-
-    void setExperience() {
-    }
-
-    void getMoney() {
-    }
-
-    void setMoney() {
-    }
-
-    void getInventory() {
-    }
-
-    void setInventory() {
     }
 
     void useItem() {
@@ -46,6 +23,8 @@ class HeroTest {
     void showInventory() {
     }
 
-    void info() {
+    void Info() {
+        var intel = new Hero(20, 2, true);
+        assertEquals("Name: Starkiller, Health: 20, Attack Power: 2, Is Alive: true, Level: 1, Experiance: 0, Money: 0.0, Inventory:", intel.Info());
     }
 }
