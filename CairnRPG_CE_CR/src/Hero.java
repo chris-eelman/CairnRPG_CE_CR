@@ -75,7 +75,7 @@ public class Hero extends Character {
         boolean hitSuccess = hitRoll < hitChance;
 
         // Calculate the damage and print a message to the console
-        int damage = 0;
+        float damage = 0;
         if (hitSuccess) {
             damage = attackPower;
             if (damage < 0) {
@@ -124,14 +124,31 @@ public class Hero extends Character {
 
     public boolean addToInventory(Item item) {
         // code to add an item to the inventory
+        for (int i = 0; i < inventory.length; i++) {
+            if (inventory[i] == null) {
+                inventory[i] = item;
+                return true;
+            }
+        }
+        return false;
+
     }
 
     public String showInventory() {
         // code to display the contents of the inventory
+        String itms = "";
+        for (int i = 0; i < inventory.length; i++) {
+            if (inventory[i] != null) {
+                itms += inventory[i].toString() + ", ";
+            }
+        }
+        return itms;
+
     }
 
     public String info() {
         // code to display the hero's current level, experience, money, and other relevant information
+        return "Name: " + name + "Health: " + health + "Attack Power: " + attackPower + "Is Alive: "+ isAlive + "Level " + level + "Experiance " + experience + "Money " + money + "Inventory " + showInventory();
     }
 }
 
