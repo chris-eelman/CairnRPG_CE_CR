@@ -6,7 +6,7 @@ public class Hero extends Character {
     private float money = 0.0f;
     private Item[] inventory;
 
-    public Hero(float health, float attackPower, boolean isAlive) {
+    public Hero(double health, double attackPower, boolean isAlive) {
         super("Starkiller", health, attackPower, isAlive);
         Item firstPotion = new Item("Potion", 20);
         this.inventory = new Item[5];
@@ -51,7 +51,7 @@ public class Hero extends Character {
     // methods specific to the hero class
     public boolean fight(Enemy enemy) {
         // Decide whether to use a basic attack or a special attack
-        float attackPower;
+        double attackPower;
         String attackType;
         double randomValue = Math.random();
         if (randomValue < 0.2) {
@@ -75,7 +75,7 @@ public class Hero extends Character {
         boolean hitSuccess = hitRoll < hitChance;
 
         // Calculate the damage and print a message to the console
-        float damage = 0;
+        double damage = 0;
         if (hitSuccess) {
             damage = attackPower;
             if (damage < 0) {

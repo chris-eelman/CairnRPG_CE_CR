@@ -2,8 +2,8 @@ import java.util.Random;
 public class Character {
 
     String name;
-    float health;
-    float attackPower;
+    double health;
+    double attackPower;
     boolean isAlive;
 
     public boolean runAway(){
@@ -21,7 +21,7 @@ public class Character {
         return "Name: " + name + ", Health: " + health + ", Attack Power: " + attackPower + ", Is Alive: "+ isAlive;
     }
 
-    public Character(String name, float health, float attackPower, boolean isAlive){
+    public Character(String name, double health, double attackPower, boolean isAlive){
         this.name = name;
         this.health = health;
         this.attackPower = attackPower;
@@ -36,15 +36,15 @@ public class Character {
         this.name = name;
     }
 
-    public float getHealth() {
+    public double getHealth() {
         return health;
     }
 
-    public void setHealth(float health) {
+    public void setHealth(double health) {
         this.health = health;
     }
 
-    public float getAttackPower() {
+    public double getAttackPower() {
         return attackPower;
     }
 

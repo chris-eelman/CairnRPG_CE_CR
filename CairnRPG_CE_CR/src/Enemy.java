@@ -2,11 +2,11 @@ public class Enemy extends Character {
     private int magicPower=30;
 
 
-    public Enemy (float health, float attackPower, boolean isAlive) {
+    public Enemy (double health, double attackPower, boolean isAlive) {
         super("Stormtrooper",health, attackPower, isAlive);
     }
 
-    public Enemy (String name, float health, float attackPower, boolean isAlive) {
+    public Enemy (String name, double health, double attackPower, boolean isAlive) {
         super(name, health, attackPower, isAlive);
     }
 
@@ -19,8 +19,8 @@ public class Enemy extends Character {
         this.magicPower = magicPower;
     }
 
-    public boolean fight(Hero Hero) {
-        float attackPower;
+    public boolean fight(Hero hero) {
+        double attackPower;
         String attackType;
         double randomValue = Math.random();
         if (randomValue < 0.2 && magicPower > 30) {
@@ -40,7 +40,7 @@ public class Enemy extends Character {
         boolean hitSuccess = hitRoll < hitChance;
 
         // Calculate the damage and print a message to the console
-        int damage = 0;
+        double damage = 0;
         if (hitSuccess) {
             damage = attackPower;
             if (damage < 0) {

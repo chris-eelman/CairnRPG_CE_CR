@@ -1,6 +1,6 @@
 public class Boss extends Enemy {
     private int ultrasLeft;
-   public Boss (float health, float attackPower, boolean isAlive) {
+   public Boss (double health, double attackPower, boolean isAlive) {
        super("Darth Vader", health, attackPower, isAlive);
        this.ultrasLeft = 3;
    }
@@ -14,8 +14,8 @@ public class Boss extends Enemy {
            this.ultrasLeft = ultrasLeft;
        }
 
-    public boolean fight(Hero Hero) {
-        float attackPower;
+    public boolean fight(Hero hero) {
+        double attackPower;
         String attackType;
         double randomValue = Math.random();
         if (randomValue < 0.2 && ultrasLeft > 0) {
@@ -36,7 +36,7 @@ public class Boss extends Enemy {
         boolean hitSuccess = hitRoll < hitChance;
 
         // Calculate the damage and print a message to the console
-        int damage = 0;
+        double damage = 0;
         if (hitSuccess) {
             damage = attackPower;
             if (damage < 0) {
