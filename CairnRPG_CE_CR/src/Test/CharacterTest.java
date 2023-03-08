@@ -6,41 +6,12 @@ class CharacterTest {
 
     @Test
     void runAway() {
+        var
     }
 
     @Test
     void info() {
-    }
-
-    @Test
-    void getName() {
-    }
-
-    @Test
-    void setName() {
-    }
-
-    @Test
-    void getHealth() {
-    }
-
-    @Test
-    void setHealth() {
-    }
-
-    @Test
-    void getAttackPower() {
-    }
-
-    @Test
-    void setAttackPower() {
-    }
-
-    @Test
-    void isAlive() {
-    }
-
-    @Test
-    void setAlive() {
+        var intel = new Character("Starkiller", 100, 100, true);
+        assertEquals("Character name: Starkiller, Health: 100, Attack Power: 100, Is Alive: True",intel.info());
     }
 }
