@@ -148,7 +148,7 @@ public class Hero extends Character {
 
     public String Info() {
         // code to display the hero's current level, experience, money, and other relevant information
-        return "Name: " + name + ", Health: " + health + ", Attack Power: " + attackPower + ", Is Alive: "+ isAlive + ", Level " + level + ", Experiance " + experience + ", Money " + money + ", Inventory " + showInventory();
+        return "Name: " + name + ", Health: " + health + ", Attack Power: " + attackPower + ", Is Alive: "+ isAlive + ", Level: " + level + ", Experiance: " + experience + ", Money: " + money + ", Inventory: " + showInventory();
     }
 }
 
