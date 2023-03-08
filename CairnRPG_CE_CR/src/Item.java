@@ -26,7 +26,7 @@ public class Item {
     }
 
     public String Info(){
-        return "Item name: " + name + "Healing Power: " + healingPower;
+        return "Item name: " + name + ", Healing Power: " + healingPower;
     }
 
 }

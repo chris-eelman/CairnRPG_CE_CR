@@ -18,7 +18,7 @@ public class Character {
         }
     }
     public String info() {
-        return "Name: " + name + "Health: " + health + "Attack Power: " + attackPower + "Is Alive: "+ isAlive;
+        return "Name: " + name + ", Health: " + health + ", Attack Power: " + attackPower + ", Is Alive: "+ isAlive;
     }
 
     public Character(String name, float health, float attackPower, boolean isAlive){
