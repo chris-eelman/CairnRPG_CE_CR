@@ -3,7 +3,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HeroTest {
 
-    Enemy EnemyTest = new Enemy {}
+//    Enemy EnemyTest = new Enemy {}
     @Test
     public void fightingTest1(){
         var something = new Hero();
