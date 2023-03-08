@@ -6,6 +6,7 @@ public class Character {
     double attackPower;
     boolean isAlive;
 
+//    This method gives the hero a random probability to successfully run away from the encounter.
     public boolean runAway(){
         Random rand = new Random();
         int rand_int = rand.nextInt(100);
@@ -19,6 +20,7 @@ public class Character {
             return true;
         }
     }
+//    This method gives all the information about the character.
     public String info() {
         return "Name: " + name + ", Health: " + health + ", Attack Power: " + attackPower + ", Is Alive: "+ isAlive;
     }
@@ -30,6 +32,7 @@ public class Character {
         this.isAlive = isAlive;
     }
 
+// Getters and setters
     public String getName() {
         return name;
     }
