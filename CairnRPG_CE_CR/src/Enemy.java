@@ -46,9 +46,10 @@ public class Enemy extends Character {
             if (damage < 0) {
                 damage = 0; // damage cannot be negative
             }
-            System.out.println("You hit " + hero.getName() + " with a " + attackType + " attack, dealing " + damage + " damage.");
+            hero.setHealth(hero.getHealth() - damage); //take away health from the hero
+            System.out.println("The Stormtrooper hit " + hero.getName() + " with a " + attackType + " attack, dealing " + damage + " damage.");
         } else {
-            System.out.println("You missed " + hero.getName() + ".");
+            System.out.println("The Stormtrooper missed " + hero.getName() + ".");
         }
 
         // Return true if the attack landed, false otherwise
@@ -57,7 +58,7 @@ public class Enemy extends Character {
 
     public String info() {
     //code to display the Enemy's statistics
-        return "Name: " + name + "Health: " + health + "Attack Power: " + attackPower + "Is Alive " + isAlive;
+        return "Name: " + name + "Health: " + health + "Attack Power: " + attackPower + "Is Alive: " + isAlive +"Magic Power: " + magicPower;
     }
 }
 
