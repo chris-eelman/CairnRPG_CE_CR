@@ -6,7 +6,7 @@ class ItemTest {
 
     @Test
     void info() {
-        var intel = new Item("Starkiller", 25);
-        assertEquals("Item name: Starkiller, Healing Power: 25",intel.Info());
+        var intel = new Item("Potion", 20);
+        assertEquals("Item name: Potion, Healing Power: 20",intel.Info());
     }
 }
