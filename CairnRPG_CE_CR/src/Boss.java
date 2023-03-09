@@ -20,7 +20,7 @@ public class Boss extends Enemy {
         double randomValue = Math.random();
         if (randomValue < 0.2 && ultrasLeft > 0) {
             // 20% chance of using ultra attack
-            attackPower = this.getAttackPower() * 2;
+            attackPower = this.getAttackPower() * 4;
             attackType = "Force Choke";
             ultrasLeft --;
         } else {
@@ -42,9 +42,10 @@ public class Boss extends Enemy {
             if (damage < 0) {
                 damage = 0; // damage cannot be negative
             }
-            System.out.println("You hit " + hero.getName() + " with a " + attackType + " attack, dealing " + damage + " damage.");
+            hero.setHealth(hero.getHealth() - damage);
+            System.out.println(name + " hit " + hero.getName() + " with a " + attackType + " attack, dealing " + damage + " damage.");
         } else {
-            System.out.println("You missed " + hero.getName() + ".");
+            System.out.println(name + " missed " + hero.getName() + ".");
         }
 
         // Return true if the attack landed, false otherwise
@@ -53,6 +54,6 @@ public class Boss extends Enemy {
 
     public String info() {
         //code to display the Boss's statistics
-        return "Name: " + name + "Health: " + health + "Attack Power: " + attackPower + "Is Alive " + isAlive;
+        return "Boss Name: " + name + ", Health: " + health + ", Attack Power: " + attackPower + ", Is Alive: " + isAlive + ", Ultras left: " + ultrasLeft;
     }
 }
