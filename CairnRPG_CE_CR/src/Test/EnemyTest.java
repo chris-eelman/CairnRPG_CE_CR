@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -5,7 +6,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class EnemyTest {
 
     @Test
-    void testFightHit() {
+    @DisplayName("Checks if a basic attack is possible")
+
+    void testBasicAttack () {
         Hero Luke1 = new Hero(100, 10, true);
         Enemy trooper1 = new Enemy(100, 10, true);
 
@@ -13,8 +16,10 @@ class EnemyTest {
         boolean attackHit = false;
         for (int i = 0; i < 10; i++) { // run the test 10 times to increase chance of attack hitting
             attackHit = trooper1.fight(Luke1);
-            if (attackHit) { // if the attack hits, break out of the loop
+            if (attackHit && (Luke1.getHealth() == initialHeroHealth - trooper1.getAttackPower())) { // if the attack hits, break out of the loop
                 break;
+            }else{
+                Luke1.setHealth(initialHeroHealth);
             }
         }
         if (attackHit) { // if the attack hit, check that the hero's health has decreased by the expected amount
@@ -25,6 +30,7 @@ class EnemyTest {
     }
 
     @Test
+    @DisplayName("Checks if a Magic attack is possible")
     void testMagicAttack() {
         Hero Luke1 = new Hero(100, 10, true);
         Enemy trooper1 = new Enemy(100, 10, true);
@@ -36,7 +42,7 @@ class EnemyTest {
             if (attackHit && (Luke1.getHealth() == initialHeroHealth - trooper1.getAttackPower() * 2)) { // if the attack hits, break out of the loop
                 break;
             }else{
-                Luke1.setHealth(100);
+                Luke1.setHealth(initialHeroHealth);
             }
         }
         if (attackHit) { // if the attack hit, check that the hero's health has decreased by the expected amount
@@ -47,6 +53,7 @@ class EnemyTest {
     }
 
     @Test
+    @DisplayName("Checks if an attack miss is possible")
     void testFightAttackMiss() {
         Hero Luke1 = new Hero(100, 10, true);
         Enemy trooper1 = new Enemy(100, 10, true);
