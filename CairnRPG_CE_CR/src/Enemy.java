@@ -48,6 +48,10 @@ public class Enemy extends Character {
             }
             hero.setHealth(hero.getHealth() - damage); //take away health from the hero
             System.out.println("The Stormtrooper hit " + hero.getName() + " with a " + attackType + " attack, dealing " + damage + " damage.");
+            if(hero.getHealth() <= 0){
+                hero.setAlive(false);
+                System.out.println(name + " ****KILLED**** " + hero.getName() + " with a fatal blow!");
+            }
         } else {
             System.out.println("The Stormtrooper missed " + hero.getName() + ".");
         }

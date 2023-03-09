@@ -21,7 +21,7 @@ public class RPGrunnerV3 {
         //These will be moved into the fight/shop sequences in V2.
         Enemy e = new Enemy(100.0, 10.0, true);
         Boss b = new Boss(300.0, 30.0, true);
-        Item testItem = new Item("Potion", 20);
+        Item testItem = new Item("Bacta Spray", 20);
         ///
 
         boolean isPlaying = true;
@@ -33,7 +33,7 @@ public class RPGrunnerV3 {
         try {
             openingCredits(w);
         } catch (Exception ex) {}
-        System.out.println("\nYou have just entered the game world. Your hero '" + h.getName() + "' is ready to go.");
+        System.out.println("\nYou have just entered the game world of the Star Wars Universe. Your hero '" + h.getName() + "' is ready to go.");
 
         //Gameplay loop
         while (isPlaying) {
@@ -41,10 +41,10 @@ public class RPGrunnerV3 {
             System.out.println("\nWhat would you like to do? (type the number below for which " +
                     "option you would like, and then hit the ENTER key)\n");
             System.out.println("--------------------------");
-            System.out.println("1. ROAM THE WORLD");
+            System.out.println("1. ROAM THE GALAXY");
             System.out.println("2. GET CHARACTER INFO");
-            System.out.println("3. REST AT INN");
-            System.out.println("4. SHOP AT STORE");
+            System.out.println("3. REST IN YOUR SHIP");
+            System.out.println("4. SHOP AT CANTINA");
             System.out.println("5. EXIT THE GAME");
             System.out.println("--------------------------");
 
@@ -97,15 +97,15 @@ public class RPGrunnerV3 {
      */
     public static void roam(Hero h) {
         Enemy e = new Enemy(100.0, 10.0, true);
-        System.out.println("You were adventuring around the world and run into a wild '"+ e.getName() +"'!");
+        System.out.println("You were adventuring around the outer parts of the galaxy and run into a '"+ e.getName() +"'!");
         Random r = new Random();
         int rStart = r.nextInt(10);
         if (rStart<3) {
-            System.out.println("The beast got the jump on you, and attacked first.");
+            System.out.println("The foe got the jump on you, and attacked first.");
             e.fight(h);
             fightLoop(h, e, false);
         } else {
-            System.out.println("You confront the beast and begin the encounter!");
+            System.out.println("You confront the foe and begin the encounter!");
             fightLoop(h, e, true);
         }
     }
@@ -163,9 +163,9 @@ public class RPGrunnerV3 {
             }
         }
         if (h.isAlive() && !e.isAlive()) {
-            System.out.println("You have vanquished the beast!");
+            System.out.println("You have vanquished that Imperial bucket head!");
             int newMoney = r.nextInt(10,51);
-            System.out.println("You receive " + newMoney + " GOLD!");
+            System.out.println("You receive " + newMoney + " CREDITS!");
             h.setMoney(h.getMoney()+newMoney);
             int newExp = r.nextInt(20,40);
             System.out.println("You receive " + newExp + " EXPERIENCE!");
@@ -188,8 +188,8 @@ public class RPGrunnerV3 {
 
         while (stillShopping) {
             System.out.println("Welcome to the shop, what would you like to buy?");
-            System.out.println("===== 1. Potion, 10 GOLD (Heals 20 Health Points");
-            System.out.println("===== 2. Super Potion, 30 GOLD (Heals 50 Health Points");
+            System.out.println("===== 1. Bacta Spray, 10 CREDITS (Heals 20 Health Points");
+            System.out.println("===== 2. Bacta Bomb, 30 CREDITS (Heals 50 Health Points");
             System.out.println("===== 3. LEAVE SHOP");
 
             userInput = shopScan.nextInt();
@@ -197,10 +197,10 @@ public class RPGrunnerV3 {
             switch (userInput) {
                 case 1:
                     if (h.getMoney() >= 10) {
-                        if (h.addToInventory(new Item("Potion", 20))) {
+                        if (h.addToInventory(new Item("Bacta Spray", 20))) {
                             h.setMoney(h.getMoney() - 10);
-                            System.out.println("You purchased a 'Potion'");
-                            System.out.println("You still have " + h.getMoney() + " Gold left.");
+                            System.out.println("You purchased a 'Bacta Spray'");
+                            System.out.println("You still have " + h.getMoney() + " CREDITS left.");
                         } else {
                             System.out.println("You tried to purchase this but your inventory slots are full.");
                         }
@@ -211,10 +211,10 @@ public class RPGrunnerV3 {
                     break;
                 case 2:
                     if (h.getMoney() >= 30) {
-                        if (h.addToInventory(new Item("Super Potion", 50))) {
+                        if (h.addToInventory(new Item("Bacta Bomb", 50))) {
                             h.setMoney(h.getMoney() - 30);
-                            System.out.println("You purchased a 'Super Potion'");
-                            System.out.println("You still have " + h.getMoney() + " Gold left.");
+                            System.out.println("You purchased a 'Bacta Bomb'");
+                            System.out.println("You still have " + h.getMoney() + " CREDITS left.");
                         } else {
                             System.out.println("You tried to purchase this but your inventory slots are full.");
                         }

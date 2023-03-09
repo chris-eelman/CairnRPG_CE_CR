@@ -81,6 +81,12 @@ public class Hero extends Character {
             }
             enemy.setHealth(enemy.getHealth()- damage);
             System.out.println("You hit " + enemy.getName() + " with a " + attackType + " attack, dealing " + damage + " damage.");
+            if(enemy.getHealth() <= 0){
+                enemy.setAlive(false);
+                System.out.println("You ****KILLED**** " + enemy.getName() + " with a fatal blow!");
+            }
+
+
         } else {
             System.out.println("You missed " + enemy.getName() + ".");
         }
@@ -145,7 +151,7 @@ public class Hero extends Character {
 
     }
 
-    public String Info() {
+    public String info() {
         // code to display the hero's current level, experience, money, and other relevant information
         return "Name: " + name + ", Health: " + health + ", Attack Power: " + attackPower + ", Is Alive: "+ isAlive + ", Level: " + level + ", Experiance: " + experience + ", Money: " + money + ", Inventory: " + showInventory();
     }

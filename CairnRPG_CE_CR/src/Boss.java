@@ -44,6 +44,10 @@ public class Boss extends Enemy {
             }
             hero.setHealth(hero.getHealth() - damage);
             System.out.println(name + " hit " + hero.getName() + " with a " + attackType + " attack, dealing " + damage + " damage.");
+            if(hero.getHealth() <= 0){
+                hero.setAlive(false);
+                System.out.println(name + " ****KILLED**** " + hero.getName() + " with a fatal blow!");
+            }
         } else {
             System.out.println(name + " missed " + hero.getName() + ".");
         }
