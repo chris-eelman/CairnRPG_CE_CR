@@ -1,5 +1,3 @@
-// TODO:
-//  finish the methods
 public class Hero extends Character {
     private int level = 1;
     private int experience = 0;
