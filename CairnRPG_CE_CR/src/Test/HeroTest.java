@@ -78,15 +78,15 @@ class HeroTest {
         Enemy enemy = new Enemy("Stormtrooper", 100, 10, true);
         double initialEnemyHealth = enemy.getHealth();
         boolean attackHit = false;
-        for (int i = 0; i < 50; i++) { // run the test 50 times to increase chance of attack hitting
+        for (int i = 0; i < 50; i++) { // run the test 50 times to increase chance of attack missing
             attackHit = Starkiller1.fight(enemy);
-            if (!attackHit) { // if the basic attack hits, break out of the loop
+            if (!attackHit) { // if the basic attack MISSES, break out of the loop
                 break;
             }
         }
-        if (!attackHit) { // if the attack hit, check that the hero's health has decreased by the expected amount
+        if (!attackHit) {
             assertEquals(attackHit, false);
-        } else { // if the attack missed every time, fail the test
+        } else { // if the attack hit every time, fail the test
             fail("Attack Hit every time due to probability . Run test again to see if it will miss");
         }
 
