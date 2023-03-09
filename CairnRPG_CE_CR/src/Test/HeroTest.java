@@ -11,21 +11,42 @@ class HeroTest {
     }
 
     @Test
+    public void fight2() {
+        var hit = new Hero(0, 0, false);
+        Enemy enemy = new Enemy("Stormtrooper", 10, 10, true);
+        assertEquals(false, hit.fight(enemy));
+
+    }
+
+    @Test
     void useItem() {
-        var item = new Hero(100, 20, true);
+        var item = new Hero(100, 10, true);
         assertEquals(20,item.useItem(1));
     }
 
     @Test
-    void levelUp() {
+    void levelUp1() {
         var level = new Hero(100, 30, true);
         assertEquals(false,level.levelUp());
     }
 
     @Test
-    void addToInventory() {
+    void levelUp2() {
+        var level = new Hero(0, 0, false);
+        assertEquals(false,level.levelUp());
+    }
+
+    @Test
+    void addToInventory1() {
         var add = new Hero(100, 20, true);
         Item item = new Item("Potion", 15);
+        assertEquals(true, add.addToInventory(item));
+    }
+
+    @Test
+    void addToInventory2() {
+        var add = new Hero(100, 20, true);
+        Item item = new Item(null, 0);
         assertEquals(true, add.addToInventory(item));
     }
 
@@ -36,9 +57,16 @@ class HeroTest {
     }
 
     @Test
-    void Info() {
+    void Info1() {
         var intel = new Hero(20, 2, true);
         assertEquals("Name: Starkiller, Health: 20.0, Attack Power: 2.0, Is Alive: true, Level: 1, " +
+                "Experiance: 0, Money: 0.0, Inventory: Potion (20), ", intel.Info());
+    }
+
+    @Test
+    void Info2() {
+        var intel = new Hero(0, 0, false);
+        assertEquals("Name: Starkiller, Health: 0.0, Attack Power: 0.0, Is Alive: false, Level: 1, " +
                 "Experiance: 0, Money: 0.0, Inventory: Potion (20), ", intel.Info());
     }
 }
