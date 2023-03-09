@@ -25,7 +25,7 @@ public class Item {
         this.healingPower = healingPower;
     }
 
-    public String Info(){
+    public String info(){
         return "Item name: " + name + ", Healing Power: " + healingPower;
     }
 

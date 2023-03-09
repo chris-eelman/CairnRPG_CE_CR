@@ -135,13 +135,13 @@ class HeroTest {
     void Info1() {
         var intel = new Hero(20, 2, true);
         assertEquals("Name: Starkiller, Health: 20.0, Attack Power: 2.0, Is Alive: true, Level: 1, " +
-                "Experiance: 0, Money: 0.0, Inventory: Potion (20), ", intel.Info());
+                "Experiance: 0, Money: 0.0, Inventory: Potion (20), ", intel.info());
     }
 
     @Test
     void Info2() {
         var intel = new Hero(0, 0, false);
         assertEquals("Name: Starkiller, Health: 0.0, Attack Power: 0.0, Is Alive: false, Level: 1, " +
-                "Experiance: 0, Money: 0.0, Inventory: Potion (20), ", intel.Info());
+                "Experiance: 0, Money: 0.0, Inventory: Potion (20), ", intel.info());
     }
 }
