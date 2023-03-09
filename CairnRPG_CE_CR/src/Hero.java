@@ -79,6 +79,7 @@ public class Hero extends Character {
             if (damage < 0) {
                 damage = 0; // damage cannot be negative
             }
+            enemy.setHealth(enemy.getHealth()- damage);
             System.out.println("You hit " + enemy.getName() + " with a " + attackType + " attack, dealing " + damage + " damage.");
         } else {
             System.out.println("You missed " + enemy.getName() + ".");
