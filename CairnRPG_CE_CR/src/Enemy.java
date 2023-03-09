@@ -23,7 +23,7 @@ public class Enemy extends Character {
         double attackPower;
         String attackType;
         double randomValue = Math.random();
-        if (randomValue < 0.2 && magicPower > 30) {
+        if (randomValue < 0.2 && magicPower >= 30) {
             // 20% chance of using magical attack
             attackPower = this.getAttackPower() * 2;
             attackType = "Flame Thrower";
@@ -58,7 +58,7 @@ public class Enemy extends Character {
 
     public String info() {
     //code to display the Enemy's statistics
-        return "Name: " + name + "Health: " + health + "Attack Power: " + attackPower + "Is Alive: " + isAlive +"Magic Power: " + magicPower;
+        return "Enemy Name: " + name + ", Health: " + health + ", Attack Power: " + attackPower + ", Is Alive: " + isAlive +", Magic Power: " + magicPower;
     }
 }
 
