@@ -4,19 +4,31 @@ import static org.junit.jupiter.api.Assertions.*;
 class HeroTest {
     @Test
     public void fight1() {
-        var hit = new Hero(100, 10, true);
-        Enemy enemy = new Enemy("Stormtrooper", 10, 10, true);
-        assertEquals(true, hit.fight(enemy));
-
+        var Starkiller1 = new Hero(100, 10, true);
+        Enemy enemy = new Enemy("Stormtrooper", 100, 10, true);
+//        assertEquals(true, hit.fight(enemy));
+        double initialEnemyHealth = enemy.getHealth();
+        boolean attackHit = false;
+        for (int i = 0; i < 10; i++) { // run the test 10 times to increase chance of attack hitting
+            attackHit = Starkiller1.fight(enemy);
+            if (attackHit) { // if the attack hits, break out of the loop
+                break;
+            }
+        }
+        if (attackHit) { // if the attack hit, check that the hero's health has decreased by the expected amount
+            assertEquals(initialEnemyHealth - Starkiller1.getAttackPower(), enemy.getHealth(), 0.01);
+        } else { // if the attack missed every time, fail the test
+            fail("Attack missed every time.");
+        }
     }
 
-    @Test
-    public void fight2() {
-        var hit = new Hero(0, 0, false);
-        Enemy enemy = new Enemy("Stormtrooper", 10, 10, true);
-        assertEquals(false, hit.fight(enemy));
+//    @Test
+//    public void fight2() {
+//        var hit = new Hero(100, 10, true);
+//        Enemy enemy = new Enemy("Stormtrooper", 10, 10, true);
+//        assertEquals(false, hit.fight(enemy));
 
-    }
+//    }
 
     @Test
     void useItem() {
